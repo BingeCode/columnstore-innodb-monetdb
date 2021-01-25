@@ -19,7 +19,7 @@ https://db-engines.com/en/system/MariaDB%3bMonetDB
 
 Die heruntergeladene CSV-Datei enthält dabei die folgenden Felder:
 
-YEAR MONTH, DAY_OF_MONTH, DAY_OF_WEEK, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR, DEP_TIME, DEP_DELAY_NEW, ARR_TIME, ARR_DELAY_NEW, CANCELLED, AIR_TIME
+YEAR, MONTH, DAY_OF_MONTH, DAY_OF_WEEK, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR, DEP_TIME, DEP_DELAY_NEW, ARR_TIME, ARR_DELAY_NEW, CANCELLED, AIR_TIME
 
 Anhand der Daten sind eine Reihe von Aggregations-Abfragen möglich, um die Performance der verschiedenen Datenbank-Engines
 
