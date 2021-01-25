@@ -1,4 +1,6 @@
-# ColumnStore vs InnoDB vs MonetDB
+# columnstore-innodb-monetdb
+
+## A comparison of three database engines regarding performance and user friendliness
 
 ## Semesteraufgabe
 
