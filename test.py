@@ -36,6 +36,4 @@ temp['AIR_TIME'] = temp['AIR_TIME'].str.replace('n', '')
 # temp['DEST_CITY_NAME'] = temp['DEST_CITY_NAME'].astype(str)
 # temp['DEST_CITY_NAME'] = temp['DEST_CITY_NAME'].str.slice(0, -4)
 
-#
-
 temp.to_csv('flights.csv', index=False, header=False)
