@@ -23,7 +23,7 @@ show databases;
 
 show tables;
 
--- Importing CSV file into columnstore table
+-- Importing CSV file into columnstore table test
 sudo cpimport -s ',' <DATABASE> <TABLE> <FILENAME.csv>
 
 CREATE TABLE innodb (
