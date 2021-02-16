@@ -4,8 +4,7 @@
 
 ## Semester assignment
 
-The following work was done as part of a university assignment.
-The goals were:
+The following work was done as part of a university assignment with the following goals:
 
 - Compare MariaDB ColumnStore, InnoDB and MonetDB in terms of performance
 - Check ease of installation
