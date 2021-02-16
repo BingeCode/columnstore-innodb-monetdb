@@ -1,0 +1,19 @@
+# Sources
+
+### Links
+
+[MariaDB Choosing the right storage engine](https://mariadb.com/kb/en/choosing-the-right-storage-engine/)
+
+[Comparison MariaDB vs. MonetDB](https://db-engines.com/en/system/MariaDB%3bMonetDB)
+
+### Codes
+
+[US Carrier Codes and Names](https://aspm.faa.gov/aspmhelp/index/ASQP__Carrier_Codes_and_Names.html)
+
+Flight Cancellation Code
+
+Code Description
+A Carrier
+B Weather
+C National Air System
+D Security
