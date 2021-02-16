@@ -1,58 +1,50 @@
-import pandas as pd
+from utility_functions import *
 
-headers = ['YEAR', 'MONTH', 'DAY_OF_MONTH', 'DAY_OF_WEEK', 'ORIGIN_CITY_NAME', 'ORIGIN_STATE_ABR', 'DEST_CITY_NAME',
-           'DEST_STATE_ABR', 'DEP_TIME', 'DEP_DELAY_NEW', 'ARR_TIME', 'ARR_DELAY_NEW', 'CANCELLED', 'AIR_TIME']
+headers = ['YEAR', 'MONTH', 'DAY_OF_MONTH', 'DAY_OF_WEEK', 'OP_UNIQUE_CARRIER', 'ORIGIN_CITY_NAME',
+           'ORIGIN_STATE_ABR', 'DEST_CITY_NAME', 'DEST_STATE_ABR', 'CRS_DEP_TIME', 'DEP_DELAY_NEW',
+           'CRS_ARR_TIME', 'ARR_DELAY_NEW', 'CANCELLED', 'CANCELLATION_CODE', 'AIR_TIME', 'DISTANCE']
 
 result = pd.DataFrame()
 
-for i in range(7, 8):
+
+def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        length      - Optional  : character length of bar (Int)
+        fill        - Optional  : bar fill character (Str)
+        printEnd    - Optional  : end character (e.g. "\r", "\r\n") (Str)
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 *
+                                                     (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
+    print(f'\r{prefix} |{bar}| {percent}% {suffix}', end=printEnd)
+    # Print New Line on Complete
+    if iteration == total:
+        print()
+
+
+printProgressBar(0, 11, prefix='Progress:', suffix='Complete', length=50)
+
+
+for i in range(1, 12):
     if i < 10:
         i = "0" + str(i)
-    path = f'./Data/flights_{i}.csv'
-    temp = pd.read_csv(path, names=headers, index_col=False)
+    path = f'./Data new/flights_{i}.csv'
+    temp = pd.read_csv(path, names=headers, index_col=False, low_memory=False)
 
-    temp['DEP_TIME'] = temp['DEP_TIME'].astype(str)
-    temp['DEP_TIME'] = temp['DEP_TIME'].str.slice(0, -2)
-    temp['DEP_TIME'] = temp['DEP_TIME'].str.replace('n', '')
+    removeState(temp)
+    convertFloats(temp)
+    normalizeTime(temp)
+    fillNaN(temp)
 
-    temp['DEP_DELAY_NEW'] = temp['DEP_DELAY_NEW'].astype(str)
-    temp['DEP_DELAY_NEW'] = temp['DEP_DELAY_NEW'].str.slice(0, -2)
-    temp['DEP_DELAY_NEW'] = temp['DEP_DELAY_NEW'].str.replace('n', '')
+    printProgressBar(int(i), 11, prefix='Progress:',
+                     suffix='Complete', length=50)
 
-    temp['ARR_TIME'] = temp['ARR_TIME'].astype(str)
-    temp['ARR_TIME'] = temp['ARR_TIME'].str.slice(0, -2)
-    temp['ARR_TIME'] = temp['ARR_TIME'].str.replace('n', '')
-
-    temp['ARR_DELAY_NEW'] = temp['ARR_DELAY_NEW'].astype(str)
-    temp['ARR_DELAY_NEW'] = temp['ARR_DELAY_NEW'].str.slice(0, -2)
-    temp['ARR_DELAY_NEW'] = temp['ARR_DELAY_NEW'].str.replace('n', '')
-
-    temp['CANCELLED'] = temp['CANCELLED'].astype(str)
-    temp['CANCELLED'] = temp['CANCELLED'].str.slice(0, -2)
-    temp['CANCELLED'] = temp['CANCELLED'].str.replace('n', '')
-
-    temp['AIR_TIME'] = temp['AIR_TIME'].astype(str)
-    temp['AIR_TIME'] = temp['AIR_TIME'].str.slice(0, -2)
-    temp['AIR_TIME'] = temp['AIR_TIME'].str.replace('n', '')
-
-    temp['ORIGIN_CITY_NAME'] = temp['ORIGIN_CITY_NAME'].astype(str)
-    temp['ORIGIN_CITY_NAME'] = temp['ORIGIN_CITY_NAME'].str.slice(0, -4)
-
-    temp['DEST_CITY_NAME'] = temp['DEST_CITY_NAME'].astype(str)
-    temp['DEST_CITY_NAME'] = temp['DEST_CITY_NAME'].str.slice(0, -4)
-
-    temp['DEP_TIME'] = temp['DEP_TIME'].astype(str)
-    temp['DEP_TIME'] = (pd.to_datetime(temp['DEP_TIME'], format='%H%M', errors='coerce')
-                        .dt.strftime('%H:%M:%S')
-                        .fillna('00:00:00'))
-
-    temp['ARR_TIME'] = temp['ARR_TIME'].astype(str)
-    temp['ARR_TIME'] = (pd.to_datetime(temp['ARR_TIME'], format='%H%M', errors='coerce')
-                        .dt.strftime('%H:%M:%S')
-                        .fillna('00:00:00'))
-
-    # result = result.append(temp, ignore_index=True)
-    # print(f"Appending: {path}")
-    # print("Current size: ", result.size)
-    # print(result)
-    temp.to_csv(f'./New/flights_{i}.csv', index=False, header=False)
+    temp.to_csv(f'./New cleaned/flights_{i}.csv', index=False, header=False)
