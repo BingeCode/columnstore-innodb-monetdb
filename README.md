@@ -1,33 +1,21 @@
 # columnstore-innodb-monetdb
 
-## A comparison of three database engines regarding performance and user friendliness
+## Comparing performance, ease of installation and ease of use
 
-## Semesteraufgabe
+## Semester assignment
 
-- MariaDB ColumnStore, InnoDB und MonetDB hinsichtlich Performance vergleichen
-- Einfachheit der Installation prüfen
-- Einfachheit der Benutzung prüfen (wie leicht lassen sich Querys ausführen?)
-- Mächtigkeit der Sprache (Welche Anwendungen werden besonders gut understützt?)
-- Wie können bestimmte Anfragen besonders schnell ausgeführt werden?
-- Kurzbeschreibung der o.g. Fragen insgesamt 10 Seiten (inkl. Source-Code)
+The following work was done as part of a university assignment.
+The goals were:
 
-Als Datengrundlage wurden [Flugdaten](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) des US-amerikanischen Amts für Verkehrsstatistik verwendet.
+- Compare MariaDB ColumnStore, InnoDB and MonetDB in terms of performance
+- Check ease of installation
+- Check ease of use (how easy are queries to execute?)
+- Powerfulness of the language (which applications are particularly well supported?)
+- How can certain queries be executed particularly fast?
+- Short summary of the above questions in word document (incl. source code)
+
+[Flight data](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) from the U.S. Bureau of Transportation Statistics was used as the original data basis. The data had to be manually downloaded for each month as well as mutated and merged with a lot of effort to make it ready for SQL bulk imports. You can inspect and download the cleaned data here.
 
 https://mariadb.com/kb/en/choosing-the-right-storage-engine/
 
 https://db-engines.com/en/system/MariaDB%3bMonetDB
-
-Die heruntergeladene CSV-Datei enthält dabei die folgenden Felder:
-
-YEAR, MONTH, DAY_OF_MONTH, DAY_OF_WEEK, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR, DEP_TIME, DEP_DELAY_NEW, ARR_TIME, ARR_DELAY_NEW, CANCELLED, AIR_TIME
-
-Anhand der Daten sind eine Reihe von Aggregations-Abfragen möglich, um die Performance der verschiedenen Datenbank-Engines
-
-Aggregation Tasks:
-
-- Day with most flights
-- Origin with most flights
-- Destination with most flights
-- State with most traffic (in and out)
-- Flight with the biggest delay
-- Flight with the greatest distance
