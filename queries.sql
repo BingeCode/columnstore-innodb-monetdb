@@ -73,13 +73,11 @@ CREATE TABLE monetdb (
 -- show tables
 SELECT name FROM sys.tables WHERE type IN (SELECT table_type_id FROM sys.table_types
            WHERE table_type_name LIKE '%TABLE' AND table_type_name <> 'SYSTEM TABLE')
-   ORDER BY schema_id, name;
+   ORDER BY name;
 
 -- Importing CSV file into monetdb table
 COPY INTO monetdb(YEAR_, MONTH_, DAY_OF_MONTH, DAY_OF_WEEK, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR, DEP_TIME, DEP_DELAY_NEW, ARR_TIME, ARR_DELAY_NEW, CANCELLED, AIR_TIME) FROM '/root/flights.csv' USING DELIMITERS ',', '\n';
 
-
--- sudo mariadb <DATABASE>
 
 -----------------------------------------------------------
 -- Aggregation Queries

@@ -1,4 +1,4 @@
 *.csv
 
-*.*
-!.gitignore
+# Temporary MS word files
+*$*.docx
