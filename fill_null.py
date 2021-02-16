@@ -4,7 +4,7 @@ headers = ['YEAR', 'MONTH', 'DAY_OF_MONTH', 'DAY_OF_WEEK', 'ORIGIN_CITY_NAME', '
            'DEST_STATE_ABR', 'DEP_TIME', 'DEP_DELAY_NEW', 'ARR_TIME', 'ARR_DELAY_NEW', 'CANCELLED', 'AIR_TIME']
 
 
-temp = pd.read_csv('flights.csv', names=headers, index_col=False)
+temp = pd.read_csv('flights.csv', names=headers, index_col=False).fillna(0)
 
 # temp['DEP_TIME'] = temp['DEP_TIME'].astype(str)
 # temp['DEP_TIME'] = temp['DEP_TIME'].str.slice(0, -2)
@@ -37,3 +37,5 @@ temp['AIR_TIME'] = temp['AIR_TIME'].str.replace('n', '')
 # temp['DEST_CITY_NAME'] = temp['DEST_CITY_NAME'].str.slice(0, -4)
 
 temp.to_csv('flights.csv', index=False, header=False)
+
+# print(temp[temp['CANCELLED'] == 1])

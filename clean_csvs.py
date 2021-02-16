@@ -5,7 +5,7 @@ headers = ['YEAR', 'MONTH', 'DAY_OF_MONTH', 'DAY_OF_WEEK', 'ORIGIN_CITY_NAME', '
 
 result = pd.DataFrame()
 
-for i in range(1, 12):
+for i in range(7, 8):
     if i < 10:
         i = "0" + str(i)
     path = f'./Data/flights_{i}.csv'
