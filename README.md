@@ -19,7 +19,7 @@ The following timings were taken on Windows 10 running a virtual machine via VMW
 
 ### CSV Import timings
 
-| DBMS        | 36M records | 5.5M records | 500K records | Method                                                                                                            |
+| DBMS        | 36M records | 5.6M records | 500K records | Method                                                                                                            |
 | ----------- | ----------- | ------------ | ------------ | ----------------------------------------------------------------------------------------------------------------- |
 | Columnstore | 00m 17s     |              |              | [Columnstore cpimport](https://mariadb.com/docs/solutions/columnstore/load-columnstore-data/#cpimport)            |
 | MonetDB     | 01m 07s     |              |              | [MonetDB CSV Bulk Loads](https://www.monetdb.org/Documentation/ServerAdministration/LoadingBulkData/CSVBulkLoads) |

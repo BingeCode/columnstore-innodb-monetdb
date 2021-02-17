@@ -42,10 +42,10 @@ USING DELIMITERS ',', '\n';
 -- Queries
 -----------------------------------------------------------
 -- TOP 10 Flights with the biggest delay in h
-select ORIGIN_CITY_NAME as ORIGIN_CITY, ORIGIN_STATE_ABR as ORIGIN_STATE, DEST_CITY_NAME as DESTINATION_CITY, DEST_STATE_ABR as DESTINATION_STATE, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from monetdb order by DELAY_IN_HOURS desc limit 10;
+select YEAR_, MONTH_, DAY_OF_MONTH, ORIGIN_CITY_NAME as ORIGIN_CITY, ORIGIN_STATE_ABR as ORIGIN_STATE, DEST_CITY_NAME as DESTINATION_CITY, DEST_STATE_ABR as DESTINATION_STATE, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from monetdb order by DELAY_IN_HOURS desc limit 10;
 
 -- TOP 10 Flights with the largest distance
-select ORIGIN_CITY_NAME as ORIGIN, DEST_CITY_NAME as DESTINATION, DISTANCE as Distance from monetdb GROUP BY ORIGIN, DESTINATION order by Distance desc limit 10;
+select YEAR_, MONTH_, DAY_OF_MONTH, ORIGIN_CITY_NAME as ORIGIN, DEST_CITY_NAME as DESTINATION, DISTANCE as Distance from monetdb GROUP BY ORIGIN, DESTINATION order by Distance desc limit 10;
 
 -- Days of the month with traffic
 select DAY_OF_MONTH, Count(*) as NO_FLIGHTS from monetdb group by DAY_OF_MONTH order by DAY_OF_MONTH asc;
