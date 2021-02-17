@@ -6,6 +6,8 @@
 
 [Comparison MariaDB vs. MonetDB](https://db-engines.com/en/system/MariaDB%3bMonetDB)
 
+[MonetDB CSV Bulk Loads](https://www.monetdb.org/Documentation/ServerAdministration/LoadingBulkData/CSVBulkLoads)
+
 ### Codes
 
 [US Carrier Codes and Names](https://aspm.faa.gov/aspmhelp/index/ASQP__Carrier_Codes_and_Names.html)

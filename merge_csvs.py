@@ -30,5 +30,5 @@ for i in range(1, end_month + 1):
 #                        low_memory=False, na_filter=False, names=headers)
 #     result = result.append(temp, ignore_index=True)
 
-result.to_csv('flights.csv', index=False, header=False)
+result.to_csv('flights_total.csv', index=False, header=False)
 printProgressBar(end_month + 1, end_month + 1)

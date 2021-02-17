@@ -5,6 +5,8 @@ monetdb release flights
 # password = monetdb
 mclient -u monetdb -d flights --timer=clock
 
+DROP TABLE IF EXISTS monetdb;
+
 CREATE TABLE monetdb (
    YEAR_ SMALLINT NOT NULL,
    MONTH_ TINYINT NOT NULL,
