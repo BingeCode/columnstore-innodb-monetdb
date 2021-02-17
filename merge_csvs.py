@@ -21,7 +21,7 @@ for i in range(1, end_month + 1):
     if i < 10:
         i = "0" + str(i)
 
-    path = f'./New cleaned/flights_{i}.csv'
+    path = f'./New/flights_{i}.csv'
     temp = pd.read_csv(path, names=headers, index_col=False,
                        low_memory=False, dtype=types)
     print(temp)

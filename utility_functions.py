@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=100, fill='█', printEnd="\r"):
+def printProgressBar(iteration, total, prefix='Progress:', suffix='Complete', decimals=1, length=100, fill='█', printEnd="\r"):
     """
     Call in a loop to create terminal progress bar
     @params:
@@ -24,7 +24,7 @@ def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=
         print()
 
 
-def removeState(df):
+def removeState(df: pd.DataFrame):
     """
     Removing name of state from city name columns
     """
@@ -35,7 +35,7 @@ def removeState(df):
         df[column] = df[column].str.slice(0, -4)
 
 
-def convertFloats(df):
+def convertFloats(df: pd.DataFrame):
     """
     Converting float values to ints
     """
@@ -48,7 +48,7 @@ def convertFloats(df):
         df[column] = df[column].str.replace('n', '')
 
 
-def normalizeTime(df):
+def normalizeTime(df: pd.DataFrame):
     """
     Normalizing time strings to format hh:mm:ss
     """
@@ -61,9 +61,9 @@ def normalizeTime(df):
                       .fillna('NULL'))
 
 
-def fillNaN(df):
+def fillNaN(df: pd.DataFrame):
     """
     Filling NaN values and empty strings with 'NULL'
     """
-    df = df.fillna("NULL")
-    df = df.replace(r'^\s*$', 'NULL', regex=True)
+    df.fillna("NULL", inplace=True)
+    df.replace(r'^\s*$', 'NULL', regex=True, inplace=True)
