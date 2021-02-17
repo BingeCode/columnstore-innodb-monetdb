@@ -31,5 +31,5 @@ for i in range(1, end_month + 1):
     fillNaN(temp)
     printProgressBar(int(i) * 7 - 1, end_month * 7)
 
-    temp.to_csv(f'./New/flights_{i}.csv', index=False, header=False)
+    temp.to_csv(f'./New/flights_{i}.csv', index=False)
     printProgressBar(int(i) * 7, end_month * 7)
