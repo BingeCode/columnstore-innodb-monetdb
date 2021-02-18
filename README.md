@@ -29,9 +29,9 @@ The following timings were taken on Windows 10 running a virtual machine via VMW
 
 | Engine      | 36M records | 5.6M records | 500K records | Method                                                                                                            |
 | ----------- | ----------- | ------------ | ------------ | ----------------------------------------------------------------------------------------------------------------- |
-| Columnstore | 00m 17s     |              |              | [Columnstore cpimport](https://mariadb.com/docs/solutions/columnstore/load-columnstore-data/#cpimport)            |
-| MonetDB     | 01m 07s     |              |              | [MonetDB CSV Bulk Loads](https://www.monetdb.org/Documentation/ServerAdministration/LoadingBulkData/CSVBulkLoads) |
-| InnoDB      | 16m 40s     |              |              | [LOAD DATA INFILE](https://mariadb.com/kb/en/importing-data-into-mariadb/)                                        |
+| Columnstore | 00m 17s     | 4.2s         | 1.1s         | [Columnstore cpimport](https://mariadb.com/docs/solutions/columnstore/load-columnstore-data/#cpimport)            |
+| MonetDB     | 01m 07s     | 15s          | 1s           | [MonetDB CSV Bulk Loads](https://www.monetdb.org/Documentation/ServerAdministration/LoadingBulkData/CSVBulkLoads) |
+| InnoDB      | 16m 40s     | 2m 37s       | 13s          | [LOAD DATA INFILE](https://mariadb.com/kb/en/importing-data-into-mariadb/)                                        |
 
 ### Query timings (warm)
 
