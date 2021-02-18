@@ -1,10 +1,18 @@
+# Open Terminal
+
+# Creates the monetdb daemon / server
 monetdbd create /root/monetdb/
 monetdbd start /root/monetdb/
+
+# Creates database flights
 monetdb create flights
 monetdb release flights
+
+# Connects to database
 # password = monetdb
 mclient -u monetdb -d flights --timer=clock
 
+-- Create table for flights.csv
 DROP TABLE IF EXISTS monetdb;
 
 CREATE TABLE monetdb (
@@ -27,14 +35,12 @@ CREATE TABLE monetdb (
    DISTANCE SMALLINT
 );
 
-CREATE VIEW flights_total
-
 -- show tables
 SELECT name FROM sys.tables WHERE type IN (SELECT table_type_id FROM sys.table_types
            WHERE table_type_name LIKE '%TABLE' AND table_type_name <> 'SYSTEM TABLE')
    ORDER BY name;
 
--- Importing CSV file into monetdb table
+-- Importing flights.csv into monetdb
 COPY 
 INTO monetdb(YEAR_, MONTH_, DAY_OF_MONTH, DAY_OF_WEEK, OP_UNIQUE_CARRIER, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR, CRS_DEP_TIME, DEP_DELAY_NEW, CRS_ARR_TIME, ARR_DELAY_NEW, CANCELLED, CANCELLATION_CODE, AIR_TIME, DISTANCE) 
 FROM '/root/flights.csv' 

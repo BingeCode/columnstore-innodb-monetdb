@@ -47,8 +47,6 @@ select YEAR_, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR
 select YEAR_, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from columnstore order by DELAY_IN_HOURS desc limit 10; --8s
 select YEAR_, ORIGIN_CITY_NAME, ORIGIN_STATE_ABR, DEST_CITY_NAME, DEST_STATE_ABR, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from innodb order by DELAY_IN_HOURS desc limit 10; --6m 33s
 
-
-
 -- Count 
 select DAY_OF_MONTH, count(*) as NUMBER_FLIGHTS from monetdb group by DAY_OF_MONTH order by DAY_OF_MONTH asc; --0.1s
 select DAY_OF_MONTH, count(*) as NUMBER_FLIGHTS from columnstore group by DAY_OF_MONTH order by DAY_OF_MONTH asc; --0.7s
