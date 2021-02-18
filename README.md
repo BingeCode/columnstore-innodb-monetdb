@@ -31,4 +31,6 @@ The following timings were taken on Windows 10 running a virtual machine via VMW
 | -------------------------------------------------------- | ------- | ----------- | ------ |
 | select \* from <table> where <column> = <value> limit 10 | 0.06s   | 0.1s        | 0.02s  |
 
+### Next section
+
 The [On-Time : Reporting Carrier On-Time Performance](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ) flight data from the U.S. Bureau of Transportation Statistics was used as the original data basis. The data had to be manually downloaded for each month as well as mutated and merged with a lot of effort to make it ready for SQL bulk imports. You can inspect and download the cleaned data here.
