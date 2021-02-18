@@ -10,6 +10,12 @@
 
 [Columnstore cpimport](https://mariadb.com/docs/solutions/columnstore/load-columnstore-data/#cpimport)
 
+[Columnstore vs Clickhouse vs Spark](https://www.percona.com/blog/2017/03/17/column-store-database-benchmarks-mariadb-columnstore-vs-clickhouse-vs-apache-spark/)
+
+[Tutorial MariaDB Columnstore for MySQL Admins](https://dbsysupgrade.com/tutorial-mariadb-columnstore-for-mysql-admins/)
+
+[Columnstore system variables](https://mariadb.com/kb/en/columnstore-system-variables/#operating-mode)
+
 ### Codes
 
 [US Carrier Codes and Names](https://aspm.faa.gov/aspmhelp/index/ASQP__Carrier_Codes_and_Names.html)
