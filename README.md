@@ -17,6 +17,10 @@ The following work was done as part of a university assignment with the followin
 
 The following timings were taken on Windows 10 running a virtual machine via VMWare Workstation 16 running CentOS 8 with 4 CPU cores (Intel i7 9700K), 8GB DDR4 RAM as well as 50GB fixed storage (Samsung 970 EVO NVMe M.2).
 
+### Next section
+
+The [On-Time : Reporting Carrier On-Time Performance](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ) flight data from the U.S. Bureau of Transportation Statistics was used as the original data basis. The data had to be manually downloaded for each month as well as mutated and merged with a lot of effort to make it ready for SQL bulk imports. You can inspect and download the cleaned data here.
+
 ### CSV Import timings
 
 | DBMS        | 36M records | 5.6M records | 500K records | Method                                                                                                            |
@@ -30,7 +34,3 @@ The following timings were taken on Windows 10 running a virtual machine via VMW
 | Query statement                                          | MonetDB | Columnstore | InnoDB |
 | -------------------------------------------------------- | ------- | ----------- | ------ |
 | select \* from <table> where <column> = <value> limit 10 | 0.06s   | 0.1s        | 0.02s  |
-
-### Next section
-
-The [On-Time : Reporting Carrier On-Time Performance](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ) flight data from the U.S. Bureau of Transportation Statistics was used as the original data basis. The data had to be manually downloaded for each month as well as mutated and merged with a lot of effort to make it ready for SQL bulk imports. You can inspect and download the cleaned data here.
