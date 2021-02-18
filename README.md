@@ -31,11 +31,11 @@ The following timings were taken on Windows 10 running a virtual machine via VMW
 
 All queries were performed multiple times in a row (except for InnoDB) to make most use of the caching strategies that the DBMS employ.
 
-| Query statement                                                                                                                     | MonetDB | Columnstore | InnoDB |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------- | ------ |
-| `select * from <table> where <column> = <value> limit 10;`                                                                          | 0.06s   | 0.1s        | 0.02s  |
-| `select count(*) from <table> where <column> = <value>;`                                                                            | 0.04s   | 0.6s        | 0.02s  |
-| `select count(*) from <table>;`                                                                                                     | 0.003s  | 0.3s        | 5m 8s  |
-| `select avg(DISTANCE) as AVERAGE from <table>`                                                                                      | 0.03s   | 0.6s        | 5m 38s |
-| `select * from <table> where CRS_DEP_TIME > '10:00' and CRS_ARR_TIME < '15:00' and AIR_TIME > 300 order by AIR_TIME desc limit 10;` | 0.1s    | 0.8s        | 6m 6s  |
-| `select <columns>, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from <table order by DELAY_IN_HOURS desc limit 10;`                    | 0.3s    | 8s          | 6m 33s |
+| Query statement                                                                                                                     | Description   | MonetDB | Columnstore | InnoDB |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------- | ----------- | ------ |
+| `select * from <table> where <column> = <value> limit 10;`                                                                          | select where  | 0.06s   | 0.1s        | 0.02s  |
+| `select count(*) from <table> where <column> = <value>;`                                                                            | count where   | 0.04s   | 0.6s        | 0.02s  |
+| `select count(*) from <table>;`                                                                                                     | simple count  | 0.003s  | 0.3s        | 5m 8s  |
+| `select avg(DISTANCE) as AVERAGE from <table>`                                                                                      | aggregation   | 0.03s   | 0.6s        | 5m 38s |
+| `select * from <table> where CRS_DEP_TIME > '10:00' and CRS_ARR_TIME < '15:00' and AIR_TIME > 300 order by AIR_TIME desc limit 10;` | complex where | 0.1s    | 0.8s        | 6m 6s  |
+| `select <columns>, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from <table> order by DELAY_IN_HOURS desc limit 10;`                   | TOP10 delayed | 0.3s    | 8s          | 6m 33s |
