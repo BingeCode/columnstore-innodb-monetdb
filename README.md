@@ -1,5 +1,7 @@
 # columnstore-innodb-monetdb
 
+## Context
+
 This project was part of a university assignment with the following goals:
 
 - Compare MariaDB ColumnStore, InnoDB and MonetDB in terms of performance
@@ -45,7 +47,3 @@ All queries were performed multiple times in a row (except for InnoDB) to make m
 | `select avg(DISTANCE) as AVERAGE from <table>`                                                                                      | aggregation   | 0.03s   | 0.6s        | 5m 38s |
 | `select * from <table> where CRS_DEP_TIME > '10:00' and CRS_ARR_TIME < '15:00' and AIR_TIME > 300 order by AIR_TIME desc limit 10;` | complex where | 0.1s    | 0.8s        | 6m 6s  |
 | `select <columns>, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from <table> order by DELAY_IN_HOURS desc limit 10;`                   | TOP10 delayed | 0.3s    | 8s          | 6m 33s |
-
-For a more in depth analysis refer to the word document.
-There is a German and a machine translated English version.
-Refer to `./sources.md` for further references.
