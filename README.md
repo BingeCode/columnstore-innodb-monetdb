@@ -10,10 +10,15 @@ This project was part of a university assignment with the following goals:
 - Extended summary of the above questions in word document (incl. source code)
 
 Of the above, only the performance timings are included in this README - for the other topics please refer to the Word document (available in English and German).
+
 The [flight data from the U.S. Bureau of Transportation Statistics](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ) was used as the original data basis.
-For usage it had to be manually downloaded for each month as well as cleaned and merged using custom python code (see `./Python code`) to make it ready for SQL imports.
-All necessary SQL commands to connect, create a table, import the data and run the queries can be found in the folder `./SQL code`.
-The cleaned data has been uploaded on [Kaggle](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020) ready to be imported.
+
+For this project it had to be manually downloaded for each month as well as cleaned and merged using custom python code (see `./Python code`).
+
+All necessary SQL commands to connect to the DBMS, create a table, import the data and run the queries can be found in the folder `./SQL code`.
+
+The cleaned data has been uploaded on [Kaggle](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020).
+
 Also take a look at the sources used throughout this project in `./sources.md`.
 
 ## Performance
