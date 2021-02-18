@@ -11,9 +11,10 @@ This project was part of a university assignment with the following goals:
 
 Of the above, only the performance timings are included in this README - for the other topics please refer to the Word document (available in English and German).
 The [flight data from the U.S. Bureau of Transportation Statistics](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ) was used as the original data basis.
-For usage it had to be manually downloaded for each month as well as cleaned and merged with a lot of effort to make it ready for SQL imports.
-You can inspect and download the cleaned data [here](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020).
-Take a look at the sources used throughout this project in `./sources.md`.
+For usage it had to be manually downloaded for each month as well as cleaned and merged using custom python code (see `./Python code`) to make it ready for SQL imports.
+All necessary SQL commands to connect, create a table, import the data and run the queries can be found in the folder `./SQL code`.
+The cleaned data has been uploaded on [Kaggle](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020) ready to be imported.
+Also take a look at the sources used throughout this project in `./sources.md`.
 
 ## Performance
 
@@ -21,7 +22,7 @@ The following timings were taken on Windows 10 running a virtual machine via VMW
 
 ### CSV Import timings
 
-| DBMS        | 36M records | 5.6M records | 500K records | Method                                                                                                            |
+| Engine      | 36M records | 5.6M records | 500K records | Method                                                                                                            |
 | ----------- | ----------- | ------------ | ------------ | ----------------------------------------------------------------------------------------------------------------- |
 | Columnstore | 00m 17s     |              |              | [Columnstore cpimport](https://mariadb.com/docs/solutions/columnstore/load-columnstore-data/#cpimport)            |
 | MonetDB     | 01m 07s     |              |              | [MonetDB CSV Bulk Loads](https://www.monetdb.org/Documentation/ServerAdministration/LoadingBulkData/CSVBulkLoads) |
