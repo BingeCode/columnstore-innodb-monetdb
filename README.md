@@ -46,7 +46,6 @@ All queries were performed multiple times in a row (except for InnoDB) to make m
 | `select * from <table> where CRS_DEP_TIME > '10:00' and CRS_ARR_TIME < '15:00' and AIR_TIME > 300 order by AIR_TIME desc limit 10;` | complex where | 0.1s    | 0.8s        | 6m 6s  |
 | `select <columns>, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from <table> order by DELAY_IN_HOURS desc limit 10;`                   | TOP10 delayed | 0.3s    | 8s          | 6m 33s |
 
-In this scenario (with the aforementioned hardware and dataset), MonetDB is the clear winner in terms of performance.
-
-It remains to be tested though how it would fare in a more realistic scenario with proper DB server hardware and a large dataset (> 1TB).
-From my research it sounds like Columnstore thrives more in large datasets. Refer to `./sources.md` for further reference.
+For a more in depth analysis refer to the word document.
+There is a German and a machine translated English version.
+Refer to `./sources.md` for further references.
