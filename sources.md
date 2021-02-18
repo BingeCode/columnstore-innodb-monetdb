@@ -18,6 +18,8 @@
 
 [Kaggle dataset](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020)
 
+[Columnstore performance tuning](https://mariadb.com/kb/en/columnstore-performance-tuning/)
+
 ### Codes
 
 [US Carrier Codes and Names](https://aspm.faa.gov/aspmhelp/index/ASQP__Carrier_Codes_and_Names.html)
