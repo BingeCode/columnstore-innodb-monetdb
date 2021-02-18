@@ -26,10 +26,11 @@
 
 [US Carrier Codes and Names](https://aspm.faa.gov/aspmhelp/index/ASQP__Carrier_Codes_and_Names.html)
 
-Flight Cancellation Code
+Flight Cancellation Code (from the [U.S. Bureau of Transportation Statistics](https://www.transtats.bts.gov/Fields.asp?gnoyr_VQ=FGJ))
 
-Code Description
-A Carrier
-B Weather
-C National Air System
-D Security
+| Code | Description         |
+| ---- | ------------------- |
+| A    | Carrier             |
+| B    | Weather             |
+| C    | National Air System |
+| D    | Security            |
