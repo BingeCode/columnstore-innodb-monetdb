@@ -31,6 +31,6 @@ The [On-Time : Reporting Carrier On-Time Performance](https://www.transtats.bts.
 
 ### Query timings
 
-| Query statement                                          | MonetDB | Columnstore | InnoDB |
-| -------------------------------------------------------- | ------- | ----------- | ------ |
-| select \* from <table> where <column> = <value> limit 10 | 0.06s   | 0.1s        | 0.02s  |
+| Query statement                                            | MonetDB | Columnstore | InnoDB |
+| ---------------------------------------------------------- | ------- | ----------- | ------ |
+| `select \* from <table> where <column> = <value> limit 10` | 0.06s   | 0.1s        | 0.02s  |
