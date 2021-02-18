@@ -16,6 +16,8 @@
 
 [Columnstore system variables](https://mariadb.com/kb/en/columnstore-system-variables/#operating-mode)
 
+[Kaggle dataset](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020)
+
 ### Codes
 
 [US Carrier Codes and Names](https://aspm.faa.gov/aspmhelp/index/ASQP__Carrier_Codes_and_Names.html)
