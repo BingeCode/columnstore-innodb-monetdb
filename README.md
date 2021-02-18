@@ -17,7 +17,7 @@ For this project it had to be manually downloaded for each month as well as clea
 
 All necessary SQL commands to connect to the DBMS, create a table, import the data and run the queries can be found in the folder `./SQL code`.
 
-The cleaned data has been uploaded on [Kaggle](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020).
+The cleaned data has been uploaded on [Kaggle](https://www.kaggle.com/bingecode/us-national-flight-data-2015-2020). Its size is 2.7GB uncompressed / 377MB compressed.
 
 Also take a look at the sources used throughout this project in `./sources.md`.
 
@@ -45,3 +45,8 @@ All queries were performed multiple times in a row (except for InnoDB) to make m
 | `select avg(DISTANCE) as AVERAGE from <table>`                                                                                      | aggregation   | 0.03s   | 0.6s        | 5m 38s |
 | `select * from <table> where CRS_DEP_TIME > '10:00' and CRS_ARR_TIME < '15:00' and AIR_TIME > 300 order by AIR_TIME desc limit 10;` | complex where | 0.1s    | 0.8s        | 6m 6s  |
 | `select <columns>, FLOOR(DEP_DELAY_NEW/60) as DELAY_IN_HOURS from <table> order by DELAY_IN_HOURS desc limit 10;`                   | TOP10 delayed | 0.3s    | 8s          | 6m 33s |
+
+In this scenario (with the aforementioned hardware and dataset), MonetDB is the clear winner in terms of performance.
+
+It remains to be tested though how it would fare in a more realistic scenario with proper DB server hardware and a large dataset (> 1TB).
+From my research it sounds like Columnstore thrives more in large datasets. Refer to `./sources.md` for further reference.
