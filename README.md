@@ -35,7 +35,7 @@ The following timings were taken on Windows 10 running a virtual machine via VMW
 
 ### Query timings (warm)
 
-All queries were performed multiple times in a row (except for InnoDB) to make most use of the caching strategies that the DBMS employ.
+All queries were performed multiple times in a row (except for InnoDB) to make most use of the runtime optimization strategies that the DBMS employ.
 
 | Query statement                                                                                                                     | Description   | MonetDB | Columnstore | InnoDB |
 | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------- | ----------- | ------ |
